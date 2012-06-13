@@ -1,6 +1,6 @@
 <?php
 /**
- * File defining Backend\Interfaces\RequestInterface.
+ * File defining Backend\Interfaces\ConfigInterface.
  *
  * PHP Version 5.3
  *
@@ -13,7 +13,7 @@
  */
 namespace Backend\Interfaces;
 /**
- * The Request class which helps determine the Query string and request format.
+ * Class to abstract config file operations.
  *
  * @category Backend
  * @package  Interfaces
@@ -21,12 +21,6 @@ namespace Backend\Interfaces;
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  * @link     http://backend-php.net
  */
-interface RequestInterface
+interface ConfigInterface extends \Iterator
 {
-    /**
-     * Return the link that will result in this request
-     *
-     * @return string
-     */
-    public function getLink();
 }
