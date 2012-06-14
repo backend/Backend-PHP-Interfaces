@@ -24,6 +24,20 @@ namespace Backend\Interfaces;
 interface RequestInterface
 {
     /**
+     * Return the HTTP Method used to make the request.
+     *
+     * @return string
+     */
+    public function getMethod();
+
+    /**
+     * Return the path of the Request.
+     *
+     * @return string
+     */
+    public function getPath();
+
+    /**
      * Return the link that will result in this request
      *
      * @return string
