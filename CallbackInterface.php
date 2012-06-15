@@ -27,11 +27,11 @@ interface CallbackInterface
     /**
      * Set the class name for a static method call.
      *
-     * @param string $className the name of the class of the callback.
+     * @param string $class The name of the class of the callback.
      *
      * @return CallbackInterface The current callback.
      */
-    public function setClass($className);
+    public function setClass($class);
 
     /**
      * Get the class name of the static method call.
@@ -59,18 +59,18 @@ interface CallbackInterface
     /**
      * Set the method name for a method call.
      *
-     * @param string $methodName The method name of the callback.
+     * @param string $method The method name of the callback.
      *
      * @return CallbackInterface The current callback.
      */
-    public function setMethodName($methodName);
+    public function setMethod($method);
 
     /**
      * Get the method name of the method call.
      *
      * @return string
      */
-    public function getMethodName();
+    public function getMethod();
 
     /**
      * Set the function as the callback.
@@ -127,9 +127,10 @@ interface CallbackInterface
      *
      * This function is the logical inverse of {@see __toString}
      *
-     * @param string $string The string representation of the callback.
+     * @param string $string    The string representation of the callback.
+     * @param array  $arguments The arguments for the callback.
      *
      * @return CallbackInterface
      */
-    public static function fromString($string);
+    public static function fromString($string, $arguments = array());
 }
