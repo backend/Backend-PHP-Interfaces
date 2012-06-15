@@ -29,7 +29,7 @@ interface ApplicationInterface
      * @param \Backend\Interfaces\RequestInterface $request The request the
      * application should handle
      *
-     * @return mixed The result of the call
+     * @return \Backend\Interfaces\ResponseInterface
      */
     public function main(\Backend\Interfaces\RequestInterface $request = null);
 }
