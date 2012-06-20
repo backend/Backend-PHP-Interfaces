@@ -132,5 +132,5 @@ interface CallbackInterface
      *
      * @return CallbackInterface
      */
-    public static function fromString($string, $arguments = array());
+    public static function fromString($string, array $arguments = array());
 }

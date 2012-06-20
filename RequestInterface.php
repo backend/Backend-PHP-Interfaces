@@ -43,4 +43,25 @@ interface RequestInterface
      * @return string
      */
     public function getLink();
+
+    /**
+     * Determine the requested MIME Type for the request
+     *
+     * @return string The MIME Type for the request
+     */
+    public function getMimeType();
+
+    /**
+     * Determine the requested format for the request
+     *
+     * @return string The format for the request
+     */
+    public function getSpecifiedFormat();
+
+    /**
+     * Get the Request Extension
+     *
+     * @return string The extension of the request
+     */
+    public function getExtension();
 }
