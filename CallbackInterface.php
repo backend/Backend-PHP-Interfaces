@@ -111,26 +111,12 @@ interface CallbackInterface
      *
      * @return mixed The result of the callback.
      */
-    public function execute(array $arguments = null);
+    public function execute(array $arguments = array());
 
     /**
      * Convert the callback to a string.
      *
-     * This function is the logical inverse of {@see fromString}
-     *
      * @return string
      */
     public function __toString();
-
-    /**
-     * Convert a string to a callback.
-     *
-     * This function is the logical inverse of {@see __toString}
-     *
-     * @param string $string    The string representation of the callback.
-     * @param array  $arguments The arguments for the callback.
-     *
-     * @return CallbackInterface
-     */
-    public static function fromString($string, array $arguments = array());
 }
