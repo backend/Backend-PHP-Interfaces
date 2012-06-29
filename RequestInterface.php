@@ -24,6 +24,18 @@ namespace Backend\Interfaces;
 interface RequestInterface
 {
     /**
+     * The constructor for the class
+     *
+     * If no parameters are supplied, determine the properties of the Request
+     * from the current state.
+     *
+     * @param mixed  $url     The URL of the request
+     * @param string $method  The request method.
+     * @param mixed  $payload The request data.
+     */
+    function __construct($url = null, $method = null, $payload = null);
+
+    /**
      * Return the HTTP Method used to make the request.
      *
      * @return string
@@ -38,11 +50,11 @@ interface RequestInterface
     public function getPath();
 
     /**
-     * Return the link that will result in this request
+     * Return the url to this Request.
      *
      * @return string
      */
-    public function getLink();
+    public function getUrl();
 
     /**
      * Determine the requested MIME Type for the request
