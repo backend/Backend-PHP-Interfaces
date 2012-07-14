@@ -33,12 +33,34 @@ interface ConfigInterface extends \Iterator
     public function __get($propertyName);
 
     /**
-    * Get the named config value.
-    *
-    * @param string $name The name of the config value. Omit to get the whole
-    * config.
-    *
-    * @return mixed The config setting
-    */
-    public function get($name = false);
+     * Get the named config value.
+     *
+     * @param string $name    The name of the config value. Omit to get the whole
+     * config.
+     * @param mixed  $default The default value to return should the value not
+     * be found.
+     *
+     * @return mixed The config setting
+     */
+    public function get($name = false, $default = null);
+
+    /**
+     * Set a named config value.
+     *
+     * @param string $name  The name of the config value.
+     * @param mixed  $value The value of the setting.
+     *
+     * @return \Backend\Interfaces\ConfigInterface The current config.
+     */
+    public function set($name, $value);
+
+    /**
+     * Set all of the config values.
+     *
+     * @param mixed $config The configuration, either as an array of values
+     * or the name of the config file.
+     *
+     * @return \Backend\Interfaces\ConfigInterface The current config.
+     */
+    public function setAll($config);
 }
