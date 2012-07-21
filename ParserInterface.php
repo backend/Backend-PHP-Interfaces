@@ -23,5 +23,12 @@ namespace Backend\Interfaces;
  */
 interface ParserInterface
 {
-
+    /**
+     * Parse the string.
+     *
+     * @param string $string The string to be parsed.
+     *
+     * @return mixed The parsed string
+     */
+    public function parse($string);
 }
