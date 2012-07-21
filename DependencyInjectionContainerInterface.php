@@ -1,6 +1,6 @@
 <?php
 /**
- * File defining Backend\Interfaces\DependencyInjectorContainerInterface.
+ * File defining Backend\Interfaces\DependencyInjectionContainerInterface.
  *
  * PHP Version 5.3
  *
@@ -21,7 +21,7 @@ namespace Backend\Interfaces;
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  * @link     http://backend-php.net
  */
-interface DependencyInjectorContainerInterface
+interface DependencyInjectionContainerInterface
 {
     /**
      * The object constructor.
