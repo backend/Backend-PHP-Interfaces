@@ -40,8 +40,7 @@ interface DependencyInjectionContainerInterface
      * @return object
      * @throws \Backend\Core\Exception
      */
-    public function get($id,
-        $invalidBehavior = ContainerInterface::IGNORE_ON_INVALID_REFERENCE);
+    public function get($id, $invalidBehavior);
 
     /**
      * Remove the Implementation of the specified Component.
