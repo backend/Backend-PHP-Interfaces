@@ -34,18 +34,29 @@ interface DependencyInjectionContainerInterface
     /**
      * Get the Implementation of the specified Component.
      *
-     * @param string $id The Component identifier.
+     * @param string  $id               The Component identifier.
      * @param integer $invalidBehaviour The behavior when the service does not exist.
      *
      * @return object
      * @throws \Backend\Core\Exception
      */
-    public function get($id, $invalidBehavior);
+    public function get($id, $invalidBehaviour);
+
+    /**
+     * Register an Implementation of the specified Component.
+     *
+     * @param string $id      The Component identifier.
+     * @param object $service The component to register.
+     *
+     * @return object
+     * @throws \Backend\Core\Exception
+     */
+    public function set($id, $service);
 
     /**
      * Remove the Implementation of the specified Component.
      *
-     * @param string $component The name of the Component to remove.
+     * @param string $id The identifier of the Component to remove.
      *
      * @return void
      */
