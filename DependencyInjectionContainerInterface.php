@@ -24,14 +24,6 @@ namespace Backend\Interfaces;
 interface DependencyInjectionContainerInterface
 {
     /**
-     * The object constructor.
-     *
-     * @param Backend\Interfaces\ConfigInterface $config The configuration file
-     * to check for service and parameter definitions.
-     */
-    public function __construct(ConfigInterface $config);
-
-    /**
      * Get the Implementation of the specified Component.
      *
      * @param string  $id               The Component identifier.
