@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Backend\\Interfaces": ["", "libraries"],
+            "Backend\\Interfaces": ""
         }
     },
     "target-dir": "Backend/Interfaces"
