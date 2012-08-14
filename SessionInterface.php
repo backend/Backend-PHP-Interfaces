@@ -21,8 +21,15 @@ namespace Backend\Interfaces;
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  * @link     http://backend-php.net
  */
-interface SessionInterface
+interface SessionInterface extends \Iterator
 {
+    /**
+     * The value bag for the session.
+     *
+     * @var ArrayIterator
+     */
+    protected $valueBag;
+
     /**
      * Get a session value.
      *

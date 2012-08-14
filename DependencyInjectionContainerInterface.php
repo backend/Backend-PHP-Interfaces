@@ -32,7 +32,7 @@ interface DependencyInjectionContainerInterface
      * @return object
      * @throws \Backend\Core\Exception
      */
-    public function get($id, $invalidBehaviour);
+    public function get($id, $invalidBehaviour = null);
 
     /**
      * Register an Implementation of the specified Component.
