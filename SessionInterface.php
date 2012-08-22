@@ -24,13 +24,6 @@ namespace Backend\Interfaces;
 interface SessionInterface extends \Iterator
 {
     /**
-     * The value bag for the session.
-     *
-     * @var ArrayIterator
-     */
-    protected $valueBag;
-
-    /**
      * Get a session value.
      *
      * @param string $name The name of the value to get.
