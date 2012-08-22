@@ -41,9 +41,46 @@ interface DependencyInjectionContainerInterface
      * @param object $service The component to register.
      *
      * @return object
-     * @throws \Backend\Core\Exception
+     * @throws \Backend\Core\Exception If the component doesn't exist.
      */
     public function set($id, $service);
+
+    /**
+     * Check if the specified Component has been registered with the container.
+     *
+     * @param string $id The Component identifier.
+     *
+     * @return boolean
+     */
+    public function has($id);
+
+    /**
+     * Get the specified Parameter.
+     *
+     * @param string $name The Parameter name.
+     *
+     * @return mixed
+     */
+    public function getParameter($name);
+
+    /**
+     * Set the value of the specified Parameter.
+     *
+     * @param string $name  The Parameter name.
+     * @param mixed  $value The value of the Parameter.
+     *
+     * @return void
+     */
+    public function setParameter($name, $value);
+
+    /**
+     * Check if the specified Parameter has been registered with the container.
+     *
+     * @param string $name The Parameter name.
+     *
+     * @return boolean
+     */
+    public function hasParameter($name);
 
     /**
      * Remove the Implementation of the specified Component.
