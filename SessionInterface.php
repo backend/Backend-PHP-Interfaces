@@ -43,6 +43,25 @@ interface SessionInterface extends \Iterator
     public function set($name, $value);
 
     /**
+     * Magic function to get a session value.
+     *
+     * @param string $name The name of the value to get.
+     *
+     * @return mixed The value.
+     */
+    public function __get($name);
+
+    /**
+     * Magic function to set a session value.
+     *
+     * @param string $name  The name of the value to set.
+     * @param mixed  $value The value to set.
+     *
+     * @return \Backend\Modules\Session
+     */
+    public function __set($name, $value);
+
+    /**
      * Close the session.
      *
      * This will destroy the session and it's associated data.
