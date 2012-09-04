@@ -43,6 +43,15 @@ interface SessionInterface extends \Iterator
     public function set($name, $value);
 
     /**
+     * Remove a session value.
+     *
+     * @param string $name  The name of the value to remove.
+     *
+     * @return \Backend\Modules\Session
+     */
+    public function remove($name);
+
+    /**
      * Magic function to get a session value.
      *
      * @param string $name The name of the value to get.
