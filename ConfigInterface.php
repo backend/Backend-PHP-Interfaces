@@ -45,6 +45,16 @@ interface ConfigInterface extends \Iterator
     public function get($name = false, $default = null);
 
     /**
+     * Magic function that sets the config value on request
+     *
+     * @param string $propertyName The name of the config value.
+     * @param mixed  $value        The value of the setting.
+     *
+     * @return mixed The value of the property
+     */
+    public function __set($propertyName, $value);
+
+    /**
      * Set a named config value.
      *
      * @param string $name  The name of the config value.
@@ -63,4 +73,13 @@ interface ConfigInterface extends \Iterator
      * @return \Backend\Interfaces\ConfigInterface The current config.
      */
     public function setAll($config);
+
+    /**
+     * Check if the config has the specified value.
+     *
+     * @param mixed $name The name of the config value to check.
+     *
+     * @return boolean If the config has the specified value.
+     */
+    public function has($name);
 }
