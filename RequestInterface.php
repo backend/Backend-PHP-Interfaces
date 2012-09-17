@@ -43,11 +43,66 @@ interface RequestInterface
     public function getMethod();
 
     /**
+     * Set the Request's method.
+     *
+     * @param string $method The Request Method.
+     *
+     * @return \Backend\Interfaces\RequestInterface
+     */
+    public function setMethod($method);
+
+    /**
+     * Return the Request headers.
+     *
+     * @return array
+     */
+    public function getHeaders();
+
+    /**
+     * Set the Request headers.
+     *
+     * @param array $headers An array of headers for the Request.
+     *
+     * @return \Backend\Interfaces\RequestInterface
+     */
+    public function setHeaders(array $headers);
+
+    /**
+     * Return the specified Request header.
+     *
+     * @param string $name The name of the header to return.
+     *
+     * @return string
+     */
+    public function getHeader($name);
+
+    /**
+     * Set the specified Request headers.
+     *
+     * @param string $name  The name of the header to set.
+     * @param string $value The value of the header.
+     *
+     * @return array
+     */
+    public function setHeader($name, $value);
+
+    /**
      * Return the path of the Request.
      *
      * @return string
      */
     public function getPath();
+
+    /**
+     * Set and cleanup the path.
+     *
+     * The path should be URL decoded before calling this method.
+     *
+     * @param string $path The path.
+     *
+     * @return \Backend\Interfaces\RequestInterface
+     */
+    public function setPath($path);
 
     /**
      * Return the url to this Request.
@@ -57,23 +112,77 @@ interface RequestInterface
     public function getUrl();
 
     /**
-     * Determine the requested MIME Type for the request
+     * Set the Request's URL.
      *
-     * @return string The MIME Type for the request
+     * @param string $url The url.
+     *
+     * @return \Backend\Interfaces\RequestInterface
+     */
+    public function setUrl($url);
+
+    /**
+     * Determine the requested MIME Type for the request.
+     *
+     * @return string The MIME Type for the request.
      */
     public function getMimeType();
 
     /**
-     * Determine the requested format for the request
+     * Set the Request MIME Type.
      *
-     * @return string The format for the request
+     * @param mixed $mimeType The Request's MIME Type.
+     *
+     * @return \Backend\Interfaces\RequestInterface
+     */
+    public function setMimeType($mimeType);
+
+    /**
+     * Determine the requested format for the request.
+     *
+     * @return string The format for the request.
      */
     public function getSpecifiedFormat();
 
     /**
-     * Get the Request Extension
+     * Set the Request Specified Format.
      *
-     * @return string The extension of the request
+     * @param mixed $format The Request's specified format.
+     *
+     * @return \Backend\Interfaces\RequestInterface
+     */
+    public function setSpecifiedFormat($format);
+
+    /**
+     * Get the Request Extension.
+     *
+     * @return string The extension of the request.
      */
     public function getExtension();
+
+    /**
+     * Set the Request Extension.
+     *
+     * @param mixed $extension The Request's extension.
+     *
+     * @return \Backend\Interfaces\RequestInterface
+     */
+    public function setExtension($extension);
+
+    /**
+     * Return the request's payload.
+     *
+     * @return array The Request Payload.
+     */
+    public function getPayload();
+
+    /**
+     * Set the request's payload.
+     *
+     * Strings should be parsed for variables and objects should be casted to arrays.
+     *
+     * @param mixed $payload The Request's Payload.
+     *
+     * @return \Backend\Interfaces\RequestInterface
+     */
+    public function setPayload($payload);
 }
