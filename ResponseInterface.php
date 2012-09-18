@@ -24,6 +24,15 @@ namespace Backend\Interfaces;
 interface ResponseInterface
 {
     /**
+     * The constructor for the Response class
+     *
+     * @param string $body    The body for the response
+     * @param int    $status  The status code for the response
+     * @param array  $headers The headers for the response
+     */
+    public function __construct($body = '', $status = 200, array $headers = array());
+
+    /**
      * Return the current status code for the Response
      *
      * @return int The status code
@@ -40,29 +49,26 @@ interface ResponseInterface
     public function setStatusCode($code);
 
     /**
-     * Return the Response's body
+     * Return the specified Response header.
      *
-     * @return mixed The Response's body
+     * @param string $name The name of the header to return.
+     *
+     * @return string
      */
-    public function getBody();
+    public function getHeader($name);
 
     /**
-     * Set the body for the Response
+     * Set the specified Response header.
      *
-     * @param mixed $body The new body
+     * If the name is null, the header won't have a name, and will contain only
+     * the value of the header.
      *
-     * @return Response The current object
+     * @param string $name  The name of the header to set.
+     * @param string $value The value of the header.
+     *
+     * @return \Backend\Interfaces\ResponseInterface
      */
-    public function setBody($body);
-
-    /**
-     * Add a header to the Response.
-     *
-     * @param string $content The content of the header
-     *
-     * @return Response The current object
-     */
-    public function addHeader($content);
+    public function setHeader($name, $value);
 
     /**
      * Return the Response's headers
@@ -76,9 +82,25 @@ interface ResponseInterface
      *
      * @param array $headers The new headers
      *
-     * @return Response The current object
+     * @return \Backend\Interfaces\ResponseInterface
      */
     public function setHeaders(array $headers);
+
+    /**
+     * Return the Response's body
+     *
+     * @return mixed The Response's body
+     */
+    public function getBody();
+
+    /**
+     * Set the body for the Response
+     *
+     * @param mixed $body The new body
+     *
+     * @return \Backend\Interfaces\ResponseInterface
+     */
+    public function setBody($body);
 
     /**
      * Output the response to the client.

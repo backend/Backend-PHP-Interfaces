@@ -24,16 +24,16 @@ namespace Backend\Interfaces;
 interface RequestInterface
 {
     /**
-     * The constructor for the class
+     * The constructor for the Request class
      *
      * If no parameters are supplied, determine the properties of the Request
      * from the current state.
      *
-     * @param mixed  $url     The URL of the request
-     * @param string $method  The request method.
-     * @param mixed  $payload The request data.
+     * @param mixed  $url    The URL of the request
+     * @param string $method The request method.
+     * @param mixed  $body   The request data.
      */
-    function __construct($url = null, $method = null, $payload = null);
+    function __construct($url = null, $method = null, $body = null);
 
     /**
      * Return the HTTP Method used to make the request.
@@ -52,6 +52,28 @@ interface RequestInterface
     public function setMethod($method);
 
     /**
+     * Return the specified Request header.
+     *
+     * @param string $name The name of the header to return.
+     *
+     * @return string
+     */
+    public function getHeader($name);
+
+    /**
+     * Set the specified Request header.
+     *
+     * If the name is null, the header won't have a name, and will contain only
+     * the value of the header.
+     *
+     * @param string $name  The name of the header to set.
+     * @param string $value The value of the header.
+     *
+     * @return \Backend\Interfaces\RequestInterface
+     */
+    public function setHeader($name, $value);
+
+    /**
      * Return the Request headers.
      *
      * @return array
@@ -68,23 +90,22 @@ interface RequestInterface
     public function setHeaders(array $headers);
 
     /**
-     * Return the specified Request header.
+     * Return the Request's body.
      *
-     * @param string $name The name of the header to return.
-     *
-     * @return string
+     * @return array The Request body.
      */
-    public function getHeader($name);
+    public function getBody();
 
     /**
-     * Set the specified Request headers.
+     * Set the Request's body.
      *
-     * @param string $name  The name of the header to set.
-     * @param string $value The value of the header.
+     * Strings should be parsed for variables and objects should be casted to arrays.
      *
-     * @return array
+     * @param mixed $body The Request's body.
+     *
+     * @return \Backend\Interfaces\RequestInterface
      */
-    public function setHeader($name, $value);
+    public function setBody($body);
 
     /**
      * Return the path of the Request.
@@ -167,22 +188,4 @@ interface RequestInterface
      * @return \Backend\Interfaces\RequestInterface
      */
     public function setExtension($extension);
-
-    /**
-     * Return the request's payload.
-     *
-     * @return array The Request Payload.
-     */
-    public function getPayload();
-
-    /**
-     * Set the request's payload.
-     *
-     * Strings should be parsed for variables and objects should be casted to arrays.
-     *
-     * @param mixed $payload The Request's Payload.
-     *
-     * @return \Backend\Interfaces\RequestInterface
-     */
-    public function setPayload($payload);
 }
