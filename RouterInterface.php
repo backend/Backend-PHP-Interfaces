@@ -33,12 +33,12 @@ interface RouterInterface
     public function inspect(RequestInterface $request);
 
     /**
-     * Determine what request will result in the specified callback.
+     * Determine what route will result in the specified callback.
      *
      * @param mixed $callback Either a callback or a string representation of
      * a callback.
      *
-     * @return RequestInterface
+     * @return string The name of the route the callback resolves to.
      */
     public function resolve($callback);
 }
