@@ -41,4 +41,36 @@ interface UrlGeneratorInterface
      * @return string
      */
     public function generate($routeName);
+
+    /**
+     * Set the context.
+     *
+     * @param \Backend\Interfaces\RequestContextInterface $context The context object to set.
+     *
+     * @return  \Backend\Interfaces\URlGeneratorInterface The current object
+     */
+    public function setContext(RequestContextInterface $context);
+
+    /**
+     * Get the context.
+     *
+     * @return \Backend\Interfaces\RequestContextInterface The context object.
+     */
+    public function getContext();
+
+    /**
+     * Set the Config.
+     *
+     * @param \Backend\Interfaces\ConfigInterface $config The config object to set.
+     *
+     * @return  \Backend\Interfaces\URlGeneratorInterface The current object
+     */
+    public function setConfig(ConfigInterface $config);
+
+    /**
+     * Get the Config.
+     *
+     * @return \Backend\Interfaces\ConfigInterface $config The config object.
+     */
+    public function getConfig();
 }
