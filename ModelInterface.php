@@ -23,4 +23,21 @@ namespace Backend\Interfaces;
  */
 interface ModelInterface
 {
+    /**
+     * Populate the Model with the specified properties.
+     *
+     * The function will use any `set` functions defined.
+     *
+     * @param array $properties An array containing the properties for the model
+     *
+     * @return \Backend\Interfaces\ModelInterface The object that was populated
+     */
+    public function populate(array $properties);
+
+    /**
+     * Get the properties of the Model
+     *
+     * @return array The properties of the model as a key / value array
+     */
+    public function getProperties();
 }
