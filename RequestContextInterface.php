@@ -34,8 +34,8 @@ interface RequestContextInterface
     /**
      * Get the Request scheme.
      *
-     * If the Request URL was, http://backend-php.net/test, this will return
-     * http
+     * If the Request URL was, http://backend-php.net/folder/index.php/path,
+     * this will return http
      *
      * @return string
      */
@@ -44,28 +44,28 @@ interface RequestContextInterface
     /**
      * Get the hostname of the Request.
      *
-     * If the Request URL was, http://backend-php.net/test, this will return
-     * backend-php.net
+     * If the Request URL was, http://backend-php.net/folder/index.php/path,
+     * this will return backend-php.net
      *
      * @return string
      */
     public function getHost();
 
     /**
-     * Get the path of the Request.
+     * Get the folder of the Request.
      *
-     * If the Request URL was, http://backend-php.net/test, this will return
-     * /test
+     * If the Request URL was, http://backend-php.net/folder/index.php/path,
+     * this will return /folder
      *
      * @return string
      */
-    public function getPath();
+    public function getFolder();
 
     /**
      * Get a link to the base site of the Request.
      *
-     * If the Request URL was, http://backend-php.net/test, this will return
-     * http://backend-php.net/
+     * If the Request URL was, http://backend-php.net/folder/index.php/path,
+     * this will return http://backend-php.net/
      *
      * @return string
      */
