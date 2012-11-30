@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * Class to inspect the Request to determine what callback should be executed.
  *

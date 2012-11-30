@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * Class to create callbacks from strings and arrays.
  *

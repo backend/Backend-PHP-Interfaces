@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * Interface for classes that do Flash Session management.
  *
@@ -30,8 +31,8 @@ interface FlashInterface extends SessionInterface
      * Get a flash session value.
      *
      * The value will be removed after retreiving it.
-     * 
-     * @param string $name The name of the value to get.
+     *
+     * @param string  $name The name of the value to get.
      * @param boolean $keep If the value should be removed or not.
      *
      * @return mixed The value.

@@ -12,8 +12,9 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 use Backend\Interfaces\CallbackInterface;
-use Backend\Interfaces\DependencyInjectionContainerInterface;
+
 /**
  * Authenticator classes provide a mechanism with which to check a user and it's
  * permissions.
@@ -33,7 +34,7 @@ interface AuthenticatorInterface
      * free to add more parameters, such as the user, session or container, to
      * help your Authenticator do it's job.
      *
-     * @param  Backend\Interfaces\CallbackInterface $callback The callback the user
+     * @param Backend\Interfaces\CallbackInterface $callback The callback the user
      * is trying to access.
      *
      * @return boolean Whether or not the user may access the callback.

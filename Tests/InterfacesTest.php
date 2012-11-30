@@ -12,7 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces\Tests;
-use Backend\Interfaces\ApplicationInterface;
+
 /**
  * Class to test all the defined interfaces
  *
@@ -24,36 +24,38 @@ use Backend\Interfaces\ApplicationInterface;
  */
 class InterfacesTest extends \PHPUnit_Framework_TestCase
 {
-	/**
-	 * Data provider for testInterfaces. Return all the interfaces.
-	 * 
-	 * @return array
-	 */
-	public function dataInterfaces()
-	{
-		$files = glob(__DIR__ . '/../*Interface.php');
-		$files = array_map(array($this, 'getArguments'), $files);
-		return $files;
-	}
+    /**
+     * Data provider for testInterfaces. Return all the interfaces.
+     *
+     * @return array
+     */
+    public function dataInterfaces()
+    {
+        $files = glob(__DIR__ . '/../*Interface.php');
+        $files = array_map(array($this, 'getArguments'), $files);
 
-	protected function getArguments($file)
-	{
-		$file = basename($file);
-		if (substr($file, -4) === '.php') {
-			$file = substr($file, 0, strlen($file) - 4);
-		}
-		return array($file);
-	}
+        return $files;
+    }
 
-	/**
-	 * Compile all the interfaces.
-	 * 
-	 * @dataProvider dataInterfaces
-	 */
-	public function testInterfaces($interface)
-	{
-		$interface = '\Backend\Interfaces\\' . $interface;
-		$object = $this->getMockForAbstractClass($interface);
-		$this->assertInstanceOf($interface, $object);
-	}
+    protected function getArguments($file)
+    {
+        $file = basename($file);
+        if (substr($file, -4) === '.php') {
+            $file = substr($file, 0, strlen($file) - 4);
+        }
+
+        return array($file);
+    }
+
+    /**
+     * Compile all the interfaces.
+     *
+     * @dataProvider dataInterfaces
+     */
+    public function testInterfaces($interface)
+    {
+        $interface = '\Backend\Interfaces\\' . $interface;
+        $object = $this->getMockForAbstractClass($interface);
+        $this->assertInstanceOf($interface, $object);
+    }
 }

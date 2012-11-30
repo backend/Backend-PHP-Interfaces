@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * Class to abstract config file operations.
  *
@@ -35,9 +36,9 @@ interface ConfigInterface extends \Iterator
     /**
      * Get the named config value.
      *
-     * @param string $name    The name of the config value. Omit to get the whole
+     * @param string $name The name of the config value. Omit to get the whole
      * config.
-     * @param mixed  $default The default value to return should the value not
+     * @param mixed $default The default value to return should the value not
      * be found.
      *
      * @return mixed The config setting

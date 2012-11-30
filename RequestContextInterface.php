@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * Class to define the context of a Request.
  *

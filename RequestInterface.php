@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * The Request class which helps determine the Query string and request format.
  *
@@ -33,7 +34,7 @@ interface RequestInterface
      * @param string $method The request method.
      * @param mixed  $body   The request data.
      */
-    function __construct($url = null, $method = null, $body = null);
+    public function __construct($url = null, $method = null, $body = null);
 
     /**
      * Return the HTTP Method used to make the request.

@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * Callable functions or object\class and method pairs to be executed by the
  * Application.

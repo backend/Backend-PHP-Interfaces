@@ -32,11 +32,13 @@
 /**
  * Register and  load available autoloaders
  */
-spl_autoload_register(function ($class) {
-    if (substr($class, 0, strlen('Backend\Interfaces\\')) === 'Backend\Interfaces\\') {
-        $class = substr($class, strlen('Backend\Interfaces\\'));
+spl_autoload_register(
+    function ($class) {
+        if (substr($class, 0, strlen('Backend\Interfaces\\')) === 'Backend\Interfaces\\') {
+            $class = substr($class, strlen('Backend\Interfaces\\'));
+        }
+        if (file_exists($file = __DIR__ . '/../' . $class . '.php')) {
+            require_once $file;
+        }
     }
-    if (file_exists($file = __DIR__ . '/../' . $class . '.php')) {
-        require_once $file;
-    }
-});
+);

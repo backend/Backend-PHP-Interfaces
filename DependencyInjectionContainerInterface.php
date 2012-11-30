@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * A dependency injection container that manages dependencies.
  *
@@ -90,5 +91,4 @@ interface DependencyInjectionContainerInterface
      * @return void
      */
     public function removeDefinition($id);
-
 }

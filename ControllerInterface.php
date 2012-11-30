@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * Interface for Controllers that serve as the connection between Models and Views.
  *

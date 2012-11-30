@@ -12,6 +12,7 @@
  * @link      http://backend-php.net
  */
 namespace Backend\Interfaces;
+
 /**
  * Interface for classes that do Session management.
  *
@@ -45,7 +46,7 @@ interface SessionInterface extends \Iterator
     /**
      * Remove a session value.
      *
-     * @param string $name  The name of the value to remove.
+     * @param string $name The name of the value to remove.
      *
      * @return \Backend\Modules\Session
      */
